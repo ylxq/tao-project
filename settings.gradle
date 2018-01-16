@@ -1,0 +1,4 @@
+rootProject.name = 'tao.project'
+include 'tao-spring-mybatis'
+findProject(':tao-spring-mybatis')?.name = 'tao.spring.mybatis'
+

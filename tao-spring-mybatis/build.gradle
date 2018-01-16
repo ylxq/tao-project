@@ -1,0 +1,47 @@
+group 'tao.project.self'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/gradle-plugin/" }
+        maven { url "http://repo.spring.io/plugins-release" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
+    maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven { url 'http://repo.spring.io/milestone' }
+    maven { url 'http://repo.spring.io/snapshot' }
+    maven {url 'http://maven.aliyun.com/nexus/content/repositories/releases/'}
+    maven { url 'https://oss.sonatype.org/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'http://repo.maven.apache.org/maven2' }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+task "create-src" << {
+    sourceSets*.java.srcDirs*.each {
+        it.mkdirs()
+    }
+    sourceSets*.resources.srcDirs*.each {
+        it.mkdirs()
+    }
+} as String
