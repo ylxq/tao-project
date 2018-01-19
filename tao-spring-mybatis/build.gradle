@@ -33,7 +33,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile("org.springframework.boot:spring-boot-starter-test:${spring_boot_version}")
+    compile("org.springframework.boot:spring-boot-starter-web:${spring_boot_version}")
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${spring_mybatis}")
+    compile group: 'org.liquibase', name: 'liquibase-core', version: '3.5.3'
+    compile 'com.h2database:h2:1.4.196'
 }
 
 
