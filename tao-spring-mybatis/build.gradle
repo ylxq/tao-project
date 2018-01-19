@@ -44,4 +44,4 @@ task "create-src" << {
     sourceSets*.resources.srcDirs*.each {
         it.mkdirs()
     }
-} as String
+}
