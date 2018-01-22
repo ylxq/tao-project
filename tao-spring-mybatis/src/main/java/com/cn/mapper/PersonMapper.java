@@ -14,4 +14,7 @@ public interface PersonMapper {
 
     @Select("select * from person where id=#{id}")
     Person findOne(@Param("id") Long id);
+
+
+    Person findById(Long id);
 }

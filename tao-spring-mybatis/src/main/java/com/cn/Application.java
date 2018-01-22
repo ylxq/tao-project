@@ -29,7 +29,7 @@ public class Application {
     @GetMapping("/")
     @ResponseBody
     public String index() {
-        Person p = personMapper.findOne(1L);
+        Person p = personMapper.findById(1L);
         return "hello " + p.getFirstName();
     }
 
