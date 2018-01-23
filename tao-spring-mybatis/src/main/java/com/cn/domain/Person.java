@@ -9,6 +9,7 @@ public class Person {
     private Integer id;
     private String firstName;
     private String lastname;
+    private Integer state;
 
 
     public Integer getId() {
@@ -33,5 +34,13 @@ public class Person {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

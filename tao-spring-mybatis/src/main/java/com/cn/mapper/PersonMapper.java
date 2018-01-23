@@ -1,6 +1,7 @@
 package com.cn.mapper;
 
 import com.cn.domain.Person;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -17,4 +18,7 @@ public interface PersonMapper {
 
 
     Person findById(Long id);
+
+    @Insert("insert into person(FIRSTNAME,LASTNAME,state) values(#{firstName},#{lastname},#{state})")
+    void save(Person p);
 }
